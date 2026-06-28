@@ -130,9 +130,7 @@ def call_opencode(question: dict, max_retries: int = 2) -> dict:
     ])
     prompt = f"""{question['question']}
 
-{choices_text}
-
-Réponds uniquement par la lettre de la bonne réponse (A, B, C ou D)."""
+{choices_text}"""
 
     # Pad/truncate à exactement 1000 tokens
     prompt = pad_prompt_to_tokens(prompt, TARGET_TOKENS)

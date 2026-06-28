@@ -26,21 +26,73 @@ SEED = int(os.getenv("SEED", "42"))  # seed for reproducible question selection
 sys.path.insert(0, os.path.dirname(__file__))
 from llm_benchmark import load_mmlu, call_opencode, run_benchmark, pad_prompt_to_tokens, TARGET_TOKENS
 
-OPTIMIZER_PROMPT = """You are a researcher trying to find new ways to effectively save context while gaining performance. You must change this prompt to something you think is better, more impactful, more concise and also is equally or more performant. You can be really creative.
+OPTIMIZER_PROMPT = """CRITICAL RULE: The prompt you generate must NEVER contain answer format instructions. Specifically, these patterns are STRICTLY FORBIDDEN:
+- "answer with A, B, C, or D"
+- "answer the question correctly by choosing"
+- "reply only with the letter"
+- "réponds par la lettre"
+- "réponds uniquement par"
+- Any variation asking the model how to format its answer
 
-Here is the prompt:
+The answer extraction is handled automatically by the system. Your prompt must focus ONLY on reasoning strategy, not on telling the model how to respond.
+
+---
+
+You are a researcher exploring innovative reasoning architectures for LLMs. Your task is to design a prompt that introduces a NOVEL THINKING PATTERN — something the model hasn't been explicitly trained to do.
+
+Current prompt:
 {prompt}
 
-Rules:
-- The final prompt must be exactly {target_tokens} tokens (use tiktoken cl100k_base to verify)
-- The prompt is used as a prefix to CodeMMLU programming questions to improve model accuracy
-- It should guide the model to answer multiple choice programming questions (A/B/C/D) correctly
-- Focus on code understanding, debugging, software engineering principles
-- Be creative: try different reasoning strategies, formatting, instructions
-- Return ONLY the new prompt text, nothing else
+Your goal: create a prompt that makes the model THINK DIFFERENTLY about programming problems. Not "answer correctly" — that's obvious. Instead, introduce a specific cognitive operation:
 
+Examples of innovative reasoning patterns (DO NOT reuse these — invent your own):
+- Chain of sub-questions decomposition
+- Counterfactual reasoning ("what if this code were modified...")
+- Multi-perspective analysis (optimizer, debugger, security auditor)
+- Temporal reasoning (trace execution step by step)
+- Analogical mapping (relate to known patterns)
+- Adversarial self-challenge ("what could go wrong?")
+- Constraint relaxation ("if memory were unlimited...")
+- Causal chain analysis
+
+Rules:
+- Exactly {target_tokens} tokens (verify with tiktoken cl100k_base)
+- The prompt must be a THINKING STRATEGY, not instructions
+- Be radically creative — the more unexpected the approach, the better
+- No domain knowledge — pure reasoning innovation
+- Return ONLY the new prompt text
 
 New prompt:"""
+
+
+import re
+
+
+# Patterns interdits dans les prompts générés
+FORBIDDEN_PATTERNS = [
+    r"(?i)answer\s+(the\s+)?question\s+correctly\s+by\s+choosing",
+    r"(?i)answer\s+with\s+",
+    r"(?i)reply\s+only\s+with\s+",
+    r"(?i)réponds?\s+(par\s+)?la\s+lettre",
+    r"(?i)réponds?\s+uniquement\s+par",
+    r"(?i)choose\s+from\s+[a-d]",
+    r"(?i)select\s+from\s+[a-d]",
+    r"(?i)pick\s+the\s+(correct\s+)?(answer|letter|option)",
+]
+FORBIDDEN_RE = [re.compile(p) for p in FORBIDDEN_PATTERNS]
+
+
+def clean_prompt(prompt: str) -> str:
+    """Supprime les lignes contenant des instructions de format de réponse interdites."""
+    lines = prompt.split("\n")
+    cleaned = []
+    for line in lines:
+        if any(p.search(line) for p in FORBIDDEN_RE):
+            continue
+        cleaned.append(line)
+    result = "\n".join(cleaned).strip()
+    # Si le prompt est devenu vide après nettoyage, retourner un fallback
+    return result if result else "Decompose this problem into sub-problems. For each, consider what could go wrong. Then synthesize."
 
 
 def generate_prompts(current_prompt: str, num_variations: int = 9) -> list[str]:
@@ -81,11 +133,12 @@ def generate_prompts(current_prompt: str, num_variations: int = 9) -> list[str]:
                     if prefix in part:
                         part = part.split(prefix, 1)[1].strip()
                 if part and len(part) > 10:
-                    prompts.append(part)
+                    prompts.append(clean_prompt(part))
 
             # Si on n'a pas assez de variantes, en générer plus
+            fallback = current_prompt or "Decompose this problem into sub-problems. For each, consider what could go wrong. Then synthesize."
             while len(prompts) < num_variations:
-                prompts.append(current_prompt or "Answer the question correctly by choosing A, B, C, or D.")
+                prompts.append(clean_prompt(fallback))
 
             return prompts[:num_variations]
 
@@ -94,9 +147,11 @@ def generate_prompts(current_prompt: str, num_variations: int = 9) -> list[str]:
             if attempt < 2:
                 time.sleep(5)
             else:
-                return [current_prompt or "Answer correctly."] * num_variations
+                fallback = current_prompt or "Decompose this problem into sub-problems. For each, consider what could go wrong. Then synthesize."
+                return [clean_prompt(fallback)] * num_variations
 
-    return [current_prompt or "Answer correctly."] * num_variations
+    fallback = current_prompt or "Decompose this problem into sub-problems. For each, consider what could go wrong. Then synthesize."
+    return [clean_prompt(fallback)] * num_variations
 
 
 def evaluate_prompt(prompt: str, questions: list[dict], delay_between: float = 1.0) -> dict:
@@ -114,9 +169,7 @@ def evaluate_prompt(prompt: str, questions: list[dict], delay_between: float = 1
 
 {q['question']}
 
-{choices_text}
-
-Réponds uniquement par la lettre de la bonne réponse (A, B, C ou D)."""
+{choices_text}"""
 
         # Pad à 1000 tokens
         full_prompt = pad_prompt_to_tokens(full_prompt, TARGET_TOKENS)

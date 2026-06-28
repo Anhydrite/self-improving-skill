@@ -14,56 +14,93 @@ def load_results(path: str) -> dict:
         return json.load(f)
 
 
-def summary(data: dict) -> None:
+def summary(data: dict, markdown: bool = False) -> None:
     """Affiche un résumé global."""
     cfg = data.get("config", {})
-    print("=" * 60)
-    print("  RÉSUMÉ GLOBAL")
-    print("=" * 60)
-    print(f"  Modèle      : {cfg.get('model', '?')}")
-    print(f"  Questions   : {cfg.get('num_questions', '?')}")
-    print(f"  Waves       : {cfg.get('waves', '?')}")
-    print(f"  Seed        : {cfg.get('seed', '?')}")
-    print(f"  Target tok. : {cfg.get('target_tokens', '?')}")
-    print()
-    print(f"  Score final : {data.get('best_score', 0):.4f}")
-    best = data.get("best_prompt", "")
-    print(f"  Meilleur prompt : {best[:120]}{'...' if len(best) > 120 else ''}")
-    print()
+    if markdown:
+        print("## Résumé global\n")
+        print(f"| Paramètre | Valeur |")
+        print(f"|-----------|--------|")
+        print(f"| Modèle | {cfg.get('model', '?')} |")
+        print(f"| Questions | {cfg.get('num_questions', '?')} |")
+        print(f"| Waves | {cfg.get('waves', '?')} |")
+        print(f"| Seed | {cfg.get('seed', '?')} |")
+        print(f"| Target tok. | {cfg.get('target_tokens', '?')} |")
+        print()
+        print(f"**Score final :** {data.get('best_score', 0):.4f}\n")
+        best = data.get("best_prompt", "")
+        print(f"**Meilleur prompt :** {best[:120]}{'...' if len(best) > 120 else ''}\n")
+    else:
+        print("=" * 60)
+        print("  RÉSUMÉ GLOBAL")
+        print("=" * 60)
+        print(f"  Modèle      : {cfg.get('model', '?')}")
+        print(f"  Questions   : {cfg.get('num_questions', '?')}")
+        print(f"  Waves       : {cfg.get('waves', '?')}")
+        print(f"  Seed        : {cfg.get('seed', '?')}")
+        print(f"  Target tok. : {cfg.get('target_tokens', '?')}")
+        print()
+        print(f"  Score final : {data.get('best_score', 0):.4f}")
+        best = data.get("best_prompt", "")
+        print(f"  Meilleur prompt : {best[:120]}{'...' if len(best) > 120 else ''}")
+        print()
 
     waves = data.get("waves_summary", [])
     if waves:
-        print("  Progression des waves :")
-        for w in waves:
-            scores = w.get("all_scores", [])
-            avg = sum(scores) / len(scores) if scores else 0
-            print(f"    Wave {w['wave']}: best={w['best_score']:.4f}  avg={avg:.4f}  n={w.get('num_evaluated', '?')}")
+        if markdown:
+            print("### Progression des waves\n")
+            print("| Wave | Best | Avg | N |")
+            print("|------|------|-----|---|")
+            for w in waves:
+                scores = w.get("all_scores", [])
+                avg = sum(scores) / len(scores) if scores else 0
+                print(f"| {w['wave']} | {w['best_score']:.4f} | {avg:.4f} | {w.get('num_evaluated', '?')} |")
+        else:
+            print("  Progression des waves :")
+            for w in waves:
+                scores = w.get("all_scores", [])
+                avg = sum(scores) / len(scores) if scores else 0
+                print(f"    Wave {w['wave']}: best={w['best_score']:.4f}  avg={avg:.4f}  n={w.get('num_evaluated', '?')}")
     print()
 
 
-def compare_waves(data: dict) -> None:
+def compare_waves(data: dict, markdown: bool = False) -> None:
     """Compare les performances entre waves."""
     waves = data.get("waves_summary", [])
     if len(waves) < 2:
         print("Pas assez de waves pour comparer.")
         return
 
-    print("=" * 60)
-    print("  COMPARAISON DES WAVES")
-    print("=" * 60)
-    print(f"  {'Wave':<6} {'Best':>8} {'Avg':>8} {'Min':>8} {'Max':>8} {'StdDev':>8}")
-    print("  " + "-" * 50)
-
-    for w in waves:
-        scores = w.get("all_scores", [])
-        if not scores:
-            continue
-        avg = sum(scores) / len(scores)
-        mn = min(scores)
-        mx = max(scores)
-        variance = sum((s - avg) ** 2 for s in scores) / len(scores)
-        std = variance ** 0.5
-        print(f"  {w['wave']:<6} {w['best_score']:>8.4f} {avg:>8.4f} {mn:>8.4f} {mx:>8.4f} {std:>8.4f}")
+    if markdown:
+        print("## Comparaison des waves\n")
+        print("| Wave | Best | Avg | Min | Max | StdDev |")
+        print("|------|------|-----|-----|-----|--------|")
+        for w in waves:
+            scores = w.get("all_scores", [])
+            if not scores:
+                continue
+            avg = sum(scores) / len(scores)
+            mn = min(scores)
+            mx = max(scores)
+            variance = sum((s - avg) ** 2 for s in scores) / len(scores)
+            std = variance ** 0.5
+            print(f"| {w['wave']} | {w['best_score']:.4f} | {avg:.4f} | {mn:.4f} | {mx:.4f} | {std:.4f} |")
+    else:
+        print("=" * 60)
+        print("  COMPARAISON DES WAVES")
+        print("=" * 60)
+        print(f"  {'Wave':<6} {'Best':>8} {'Avg':>8} {'Min':>8} {'Max':>8} {'StdDev':>8}")
+        print("  " + "-" * 50)
+        for w in waves:
+            scores = w.get("all_scores", [])
+            if not scores:
+                continue
+            avg = sum(scores) / len(scores)
+            mn = min(scores)
+            mx = max(scores)
+            variance = sum((s - avg) ** 2 for s in scores) / len(scores)
+            std = variance ** 0.5
+            print(f"  {w['wave']:<6} {w['best_score']:>8.4f} {avg:>8.4f} {mn:>8.4f} {mx:>8.4f} {std:>8.4f}")
 
     print()
 
@@ -72,11 +109,14 @@ def compare_waves(data: dict) -> None:
     if len(best_scores) >= 2:
         delta = best_scores[-1] - best_scores[0]
         pct = (delta / best_scores[0] * 100) if best_scores[0] > 0 else 0
-        print(f"  Évolution : {best_scores[0]:.4f} → {best_scores[-1]:.4f} ({delta:+.4f}, {pct:+.1f}%)")
+        if markdown:
+            print(f"**Évolution :** {best_scores[0]:.4f} → {best_scores[-1]:.4f} ({delta:+.4f}, {pct:+.1f}%)\n")
+        else:
+            print(f"  Évolution : {best_scores[0]:.4f} → {best_scores[-1]:.4f} ({delta:+.4f}, {pct:+.1f}%)")
     print()
 
 
-def wave_detail(data: dict, wave_num: int) -> None:
+def wave_detail(data: dict, wave_num: int, markdown: bool = False) -> None:
     """Affiche le détail d'une wave spécifique."""
     evals = data.get("all_evaluations", [])
     wave_evals = [e for e in evals if e.get("wave") == wave_num]
@@ -85,29 +125,51 @@ def wave_detail(data: dict, wave_num: int) -> None:
         print(f"Aucune évaluation trouvée pour la wave {wave_num}.")
         return
 
-    print("=" * 60)
-    print(f"  DÉTAIL WAVE {wave_num}")
-    print("=" * 60)
+    if markdown:
+        print(f"## Détail Wave {wave_num}\n")
+        for i, e in enumerate(wave_evals):
+            score = e.get("score", 0)
+            acc = e.get("accuracy", 0)
+            tokens = e.get("total_tokens", 0)
+            prompt = e.get("prompt", "")
+            prompt_display = prompt[:80] + "..." if len(prompt) > 80 else prompt or "(vide)"
 
-    for i, e in enumerate(wave_evals):
-        score = e.get("score", 0)
-        acc = e.get("accuracy", 0)
-        tokens = e.get("total_tokens", 0)
-        prompt = e.get("prompt", "")
-        prompt_display = prompt[:80] + "..." if len(prompt) > 80 else prompt or "(vide)"
+            print(f"### Évaluation {i+1}\n")
+            print(f"- **Score :** {score:.4f}")
+            print(f"- **Accuracy :** {acc*100:.0f}%")
+            print(f"- **Tokens :** {tokens:,}")
+            print(f"- **Prompt :** `{prompt_display}`")
 
-        print(f"\n  [{i+1}] Score: {score:.4f} | Acc: {acc*100:.0f}% | Tokens: {tokens:,}")
-        print(f"      Prompt: {prompt_display}")
+            # Détail par question
+            per_q = e.get("per_question", [])
+            if per_q:
+                correct = sum(1 for q in per_q if q.get("correct"))
+                print(f"- **Résultat :** {correct}/{len(per_q)} correct")
+            print()
+    else:
+        print("=" * 60)
+        print(f"  DÉTAIL WAVE {wave_num}")
+        print("=" * 60)
 
-        # Détail par question
-        per_q = e.get("per_question", [])
-        if per_q:
-            correct = sum(1 for q in per_q if q.get("correct"))
-            print(f"      {correct}/{len(per_q)} correct")
+        for i, e in enumerate(wave_evals):
+            score = e.get("score", 0)
+            acc = e.get("accuracy", 0)
+            tokens = e.get("total_tokens", 0)
+            prompt = e.get("prompt", "")
+            prompt_display = prompt[:80] + "..." if len(prompt) > 80 else prompt or "(vide)"
+
+            print(f"\n  [{i+1}] Score: {score:.4f} | Acc: {acc*100:.0f}% | Tokens: {tokens:,}")
+            print(f"      Prompt: {prompt_display}")
+
+            # Détail par question
+            per_q = e.get("per_question", [])
+            if per_q:
+                correct = sum(1 for q in per_q if q.get("correct"))
+                print(f"      {correct}/{len(per_q)} correct")
     print()
 
 
-def by_subject(data: dict) -> None:
+def by_subject(data: dict, markdown: bool = False) -> None:
     """Analyse les performances par sujet."""
     evals = data.get("all_evaluations", [])
     if not evals:
@@ -126,25 +188,39 @@ def by_subject(data: dict) -> None:
             subject_stats[subj]["correct"] += 1
         subject_stats[subj]["tokens"] += q.get("tokens", 0)
 
-    print("=" * 60)
-    print("  PERFORMANCE PAR SUJET (meilleure évaluation)")
-    print("=" * 60)
-    print(f"  {'Sujet':<35} {'Acc':>6} {'Tok':>7}")
-    print("  " + "-" * 50)
+    if markdown:
+        print("## Performance par sujet (meilleure évaluation)\n")
+        print("| Sujet | Acc | Tok |")
+        print("|-------|-----|-----|")
 
-    for subj, stats in sorted(subject_stats.items()):
-        acc = stats["correct"] / stats["total"] if stats["total"] > 0 else 0
-        print(f"  {subj:<35} {acc*100:>5.0f}% {stats['tokens']:>6}")
+        for subj, stats in sorted(subject_stats.items()):
+            acc = stats["correct"] / stats["total"] if stats["total"] > 0 else 0
+            print(f"| {subj} | {acc*100:.0f}% | {stats['tokens']} |")
 
-    total_correct = sum(s["correct"] for s in subject_stats.values())
-    total_all = sum(s["total"] for s in subject_stats.values())
-    total_tok = sum(s["tokens"] for s in subject_stats.values())
-    print("  " + "-" * 50)
-    print(f"  {'TOTAL':<35} {total_correct/total_all*100:>5.0f}% {total_tok:>6}")
+        total_correct = sum(s["correct"] for s in subject_stats.values())
+        total_all = sum(s["total"] for s in subject_stats.values())
+        total_tok = sum(s["tokens"] for s in subject_stats.values())
+        print(f"| **TOTAL** | **{total_correct/total_all*100:.0f}%** | **{total_tok}** |")
+    else:
+        print("=" * 60)
+        print("  PERFORMANCE PAR SUJET (meilleure évaluation)")
+        print("=" * 60)
+        print(f"  {'Sujet':<35} {'Acc':>6} {'Tok':>7}")
+        print("  " + "-" * 50)
+
+        for subj, stats in sorted(subject_stats.items()):
+            acc = stats["correct"] / stats["total"] if stats["total"] > 0 else 0
+            print(f"  {subj:<35} {acc*100:>5.0f}% {stats['tokens']:>6}")
+
+        total_correct = sum(s["correct"] for s in subject_stats.values())
+        total_all = sum(s["total"] for s in subject_stats.values())
+        total_tok = sum(s["tokens"] for s in subject_stats.values())
+        print("  " + "-" * 50)
+        print(f"  {'TOTAL':<35} {total_correct/total_all*100:>5.0f}% {total_tok:>6}")
     print()
 
 
-def worst_questions(data: dict, n: int = 5) -> None:
+def worst_questions(data: dict, n: int = 5, markdown: bool = False) -> None:
     """Affiche les questions les plus souvent ratées."""
     evals = data.get("all_evaluations", [])
     if not evals:
@@ -172,17 +248,28 @@ def worst_questions(data: dict, n: int = 5) -> None:
         reverse=True,
     )
 
-    print("=" * 60)
-    print(f"  TOP {n} QUESTIONS LES PLUS DIFFICILES")
-    print("=" * 60)
+    if markdown:
+        print(f"## Top {n} questions les plus difficiles\n")
+        for i, (key, stats) in enumerate(ranked[:n]):
+            attempts = stats["attempts"]
+            errors = stats["errors"]
+            err_rate = errors / attempts * 100 if attempts > 0 else 0
+            print(f"### {i+1}. {stats['subject']}\n")
+            print(f"- **Taux d'erreur :** {err_rate:.0f}% ({errors}/{attempts})")
+            print(f"- **Question :** {stats['question'][:100]}...")
+            print()
+    else:
+        print("=" * 60)
+        print(f"  TOP {n} QUESTIONS LES PLUS DIFFICILES")
+        print("=" * 60)
 
-    for i, (key, stats) in enumerate(ranked[:n]):
-        attempts = stats["attempts"]
-        errors = stats["errors"]
-        err_rate = errors / attempts * 100 if attempts > 0 else 0
-        print(f"\n  [{i+1}] {stats['subject']}")
-        print(f"      Taux d'erreur : {err_rate:.0f}% ({errors}/{attempts})")
-        print(f"      {stats['question'][:100]}...")
+        for i, (key, stats) in enumerate(ranked[:n]):
+            attempts = stats["attempts"]
+            errors = stats["errors"]
+            err_rate = errors / attempts * 100 if attempts > 0 else 0
+            print(f"\n  [{i+1}] {stats['subject']}")
+            print(f"      Taux d'erreur : {err_rate:.0f}% ({errors}/{attempts})")
+            print(f"      {stats['question'][:100]}...")
     print()
 
 
@@ -216,19 +303,19 @@ def export_csv(data: dict, output: str) -> None:
     print(f"Exporté {len(rows)} lignes vers {output}")
 
 
-def full_analysis(data: dict) -> None:
+def full_analysis(data: dict, markdown: bool = False) -> None:
     """Analyse complète."""
-    summary(data)
-    compare_waves(data)
+    summary(data, markdown)
+    compare_waves(data, markdown)
 
     # Meilleure wave
     waves = data.get("waves_summary", [])
     if waves:
         best_wave = max(waves, key=lambda w: w.get("best_score", 0))
-        wave_detail(data, best_wave["wave"])
+        wave_detail(data, best_wave["wave"], markdown)
 
-    by_subject(data)
-    worst_questions(data)
+    by_subject(data, markdown)
+    worst_questions(data, markdown=markdown)
 
 
 def main():
@@ -242,7 +329,9 @@ def main():
     parser.add_argument("--worst", action="store_true", help="Questions les plus difficiles")
     parser.add_argument("--export", choices=["csv"], help="Exporter les données")
     parser.add_argument("--full", action="store_true", help="Analyse complète")
+    parser.add_argument("--markdown", action="store_true", help="Sortie en format Markdown")
     parser.add_argument("-o", "--output", default="results_export.csv", help="Fichier de sortie pour l'export")
+    parser.add_argument("--output-md", default="analysis_report.md", help="Fichier de sortie Markdown (défaut: analysis_report.md)")
 
     args = parser.parse_args()
 
@@ -257,21 +346,39 @@ def main():
     if not any([args.summary, args.wave, args.compare, args.subjects, args.worst, args.export, args.full]):
         args.full = True
 
+    # Variables pour la redirection markdown
+    old_stdout = sys.stdout
+    buffer = None
+
+    # Si --markdown, rediriger vers un fichier
+    if args.markdown:
+        import io
+        buffer = io.StringIO()
+        sys.stdout = buffer
+
     if args.full:
-        full_analysis(data)
+        full_analysis(data, args.markdown)
     else:
         if args.summary:
-            summary(data)
+            summary(data, args.markdown)
         if args.compare:
-            compare_waves(data)
+            compare_waves(data, args.markdown)
         if args.wave is not None:
-            wave_detail(data, args.wave)
+            wave_detail(data, args.wave, args.markdown)
         if args.subjects:
-            by_subject(data)
+            by_subject(data, args.markdown)
         if args.worst:
-            worst_questions(data)
+            worst_questions(data, markdown=args.markdown)
         if args.export:
             export_csv(data, args.output)
+
+    if args.markdown and buffer is not None:
+        sys.stdout = old_stdout
+        content = buffer.getvalue()
+        with open(args.output_md, "w", encoding="utf-8") as f:
+            f.write("# Rapport d'analyse LLM Benchmark\n\n")
+            f.write(content)
+        print(f"Rapport Markdown généré : {args.output_md}")
 
 
 if __name__ == "__main__":
