@@ -152,8 +152,8 @@ def call_opencode(question: dict, max_retries: int = 2) -> dict:
             resp.raise_for_status()
             data = resp.json()
 
-            content = data["choices"][0]["message"].get("content") or ""
-            content = content.strip().upper()
+            message = data["choices"][0]["message"]
+            content = (message.get("content") or "").strip().upper()
             usage = data.get("usage", {})
             total_tokens = usage.get("total_tokens", 0)
 

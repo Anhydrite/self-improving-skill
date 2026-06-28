@@ -38,31 +38,16 @@ The answer extraction is handled automatically by the system. Your prompt must f
 
 ---
 
-You are a researcher exploring innovative reasoning architectures for LLMs. Your task is to design a prompt that introduces a NOVEL THINKING PATTERN — something the model hasn't been explicitly trained to do.
-
-Current prompt:
-{prompt}
-
-Your goal: create a prompt that makes the model THINK DIFFERENTLY about programming problems. Not "answer correctly" — that's obvious. Instead, introduce a specific cognitive operation:
-
-Examples of innovative reasoning patterns (DO NOT reuse these — invent your own):
-- Chain of sub-questions decomposition
-- Counterfactual reasoning ("what if this code were modified...")
-- Multi-perspective analysis (optimizer, debugger, security auditor)
-- Temporal reasoning (trace execution step by step)
-- Analogical mapping (relate to known patterns)
-- Adversarial self-challenge ("what could go wrong?")
-- Constraint relaxation ("if memory were unlimited...")
-- Causal chain analysis
+Create a way of thinking.
 
 Rules:
 - Exactly {target_tokens} tokens (verify with tiktoken cl100k_base)
-- The prompt must be a THINKING STRATEGY, not instructions
-- Be radically creative — the more unexpected the approach, the better
-- No domain knowledge — pure reasoning innovation
-- Return ONLY the new prompt text
+- Must be a COGNITIVE STRATEGY, not instructions
+- Invent a novel reasoning pattern the model hasn't seen
+- No domain knowledge — pure thinking innovation
+- Return ONLY the thinking pattern, nothing else
 
-New prompt:"""
+{improvement_section}"""
 
 
 import re
@@ -78,6 +63,16 @@ FORBIDDEN_PATTERNS = [
     r"(?i)choose\s+from\s+[a-d]",
     r"(?i)select\s+from\s+[a-d]",
     r"(?i)pick\s+the\s+(correct\s+)?(answer|letter|option)",
+    r"(?i)^\.?thinking",
+    r"(?i)^\.?instruction",
+    r"(?i)^\.?system",
+    r"(?i)^let\s+me\s+(carefully|parse|think|consider)",
+    r"(?i)^we\s+need\s+to\s+generate",
+    r"(?i)^the\s+user\s+wants",
+    r"(?i)^I\s+need\s+to\s+(create|generate|design)",
+    r"(?i)^my\s+task\s+is",
+    r"(?i)^goal:",
+    r"(?i)^output:\s+only",
 ]
 FORBIDDEN_RE = [re.compile(p) for p in FORBIDDEN_PATTERNS]
 
@@ -95,63 +90,70 @@ def clean_prompt(prompt: str) -> str:
     return result if result else "Decompose this problem into sub-problems. For each, consider what could go wrong. Then synthesize."
 
 
-def generate_prompts(current_prompt: str, num_variations: int = 9) -> list[str]:
-    """Demande au LLM de générer des variantes du prompt."""
+def _generate_single_prompt(args: tuple) -> str:
+    """Worker pour générer un seul prompt en parallèle."""
+    idx, current_prompt, target_tokens = args
     headers = {
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json",
     }
 
-    # Générer toutes les variantes en un seul appel
-    batch_prompt = OPTIMIZER_PROMPT.format(
-        prompt=current_prompt if current_prompt else "(empty - starting from scratch)",
-        target_tokens=TARGET_TOKENS,
+    # Construire la section d'amélioration
+    if current_prompt:
+        improvement = f"\n\nImprove this one:\n{current_prompt}"
+    else:
+        improvement = ""
+
+    prompt_text = OPTIMIZER_PROMPT.format(
+        target_tokens=target_tokens,
+        improvement_section=improvement,
     )
-    batch_prompt += f"\n\nGenerate {num_variations} different versions. Separate each with '---PROMPT separator---'."
+    prompt_text += f"\n\nGenerate variation #{idx + 1}. You must only respond with your idea."
 
     payload = {
         "model": MODEL,
-        "messages": [{"role": "user", "content": batch_prompt}],
-        "temperature": 0.8,
-        "max_tokens": 8000,
+        "messages": [
+            {"role": "system", "content": "You are a creative prompt designer. Output ONLY the requested text, no explanation."},
+            {"role": "user", "content": prompt_text},
+        ],
+        "temperature": 0.9 + (idx * 0.01),
+        "max_tokens": 2000,
     }
 
-    for attempt in range(3):
+    for attempt in range(5):
         try:
             resp = requests.post(API_URL, headers=headers, json=payload, timeout=120)
             resp.raise_for_status()
             data = resp.json()
-            content = data["choices"][0]["message"].get("content") or ""
+            message = data["choices"][0]["message"]
+            content = (message.get("content") or "").strip()
+            if len(content) > 10:
+                return clean_prompt(content)
+            time.sleep(2)
+        except Exception:
+            time.sleep(3)
 
-            # Séparer les variantes
-            parts = content.split("---PROMPT")
-            prompts = []
-            for part in parts:
-                part = part.strip()
-                # Nettoyer les artefacts
-                for prefix in ["separator---", "Separator---", "separator ---", "Separator ---"]:
-                    if prefix in part:
-                        part = part.split(prefix, 1)[1].strip()
-                if part and len(part) > 10:
-                    prompts.append(clean_prompt(part))
+    raise RuntimeError(f"Impossible de générer le prompt #{idx} après 5 tentatives")
 
-            # Si on n'a pas assez de variantes, en générer plus
-            fallback = current_prompt or "Decompose this problem into sub-problems. For each, consider what could go wrong. Then synthesize."
-            while len(prompts) < num_variations:
-                prompts.append(clean_prompt(fallback))
 
-            return prompts[:num_variations]
+def generate_prompts(current_prompt: str, num_variations: int = 9) -> list[str]:
+    """Génère des variantes du prompt en parallèle."""
+    tasks = [(i, current_prompt, TARGET_TOKENS) for i in range(num_variations)]
 
-        except Exception as e:
-            print(f"    Erreur génération: {e}")
-            if attempt < 2:
-                time.sleep(5)
-            else:
-                fallback = current_prompt or "Decompose this problem into sub-problems. For each, consider what could go wrong. Then synthesize."
-                return [clean_prompt(fallback)] * num_variations
+    with ThreadPoolExecutor(max_workers=min(num_variations, MAX_WORKERS)) as executor:
+        futures = {executor.submit(_generate_single_prompt, t): t[0] for t in tasks}
+        prompts = []
+        for f in as_completed(futures):
+            try:
+                prompts.append(f.result())
+            except RuntimeError as e:
+                print(f"    Erreur: {e}")
 
-    fallback = current_prompt or "Decompose this problem into sub-problems. For each, consider what could go wrong. Then synthesize."
-    return [clean_prompt(fallback)] * num_variations
+    if len(prompts) < num_variations:
+        print(f"    Attention: seulement {len(prompts)}/{num_variations} prompts générés")
+
+    random.shuffle(prompts)
+    return prompts
 
 
 def evaluate_prompt(prompt: str, questions: list[dict], delay_between: float = 1.0) -> dict:
@@ -194,8 +196,8 @@ def evaluate_prompt(prompt: str, questions: list[dict], delay_between: float = 1
                 resp = requests.post(API_URL, headers=headers, json=payload, timeout=60)
                 resp.raise_for_status()
                 data = resp.json()
-                content = data["choices"][0]["message"].get("content") or ""
-                content = content.strip().upper()
+                message = data["choices"][0]["message"]
+                content = (message.get("content") or "").strip().upper()
                 usage = data.get("usage", {})
                 tokens = usage.get("total_tokens", 0)
                 total_tokens += tokens
@@ -360,7 +362,8 @@ def main():
         })
         wave_evals.append({"prompt": prompt, "score": result["score"]})
 
-        if result["score"] > best_score:
+        # Préférer un prompt non-vide en cas d'égalité
+        if result["score"] > best_score or (result["score"] == best_score and prompt and not best_prompt):
             best_score = result["score"]
             best_prompt = prompt
 
@@ -414,8 +417,8 @@ def main():
                 wave_best_score = result["score"]
                 wave_best_prompt = prompt
 
-        # Mettre à jour le meilleur global
-        if wave_best_score > best_score:
+        # Mettre à jour le meilleur global (en cas d'égalité, garder le nouveau)
+        if wave_best_score >= best_score:
             best_score = wave_best_score
             best_prompt = wave_best_prompt
 
