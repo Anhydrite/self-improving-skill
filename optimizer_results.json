@@ -1,0 +1,3809 @@
+{
+  "config": {
+    "model": "deepseek-v4-flash",
+    "num_questions": 10,
+    "waves": 3,
+    "target_tokens": 1000,
+    "seed": 42
+  },
+  "questions": [
+    {
+      "index": 0,
+      "subject": "professional_accounting",
+      "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial statement and tax purposes. During a period of inflation would Mast's ending inventory and income tax payable using LIFO be higher or lower than FIFO? Ending inventory Income tax payable",
+      "choices": [
+        "Lower Lower",
+        "Higher Higher",
+        "Lower Higher",
+        "Higher Lower"
+      ],
+      "answer": "A"
+    },
+    {
+      "index": 1,
+      "subject": "econometrics",
+      "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+      "choices": [
+        "T x k",
+        "T x 1",
+        "k x 1",
+        "1 x 1"
+      ],
+      "answer": "D"
+    },
+    {
+      "index": 2,
+      "subject": "business_ethics",
+      "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. This contrasts with ________ morality which is the code of conduct adopted by a particular group or society.",
+      "choices": [
+        "Descriptive, Normative",
+        "Normative, Instrumental",
+        "Normative, Descriptive",
+        "Ethical, Descriptive"
+      ],
+      "answer": "C"
+    },
+    {
+      "index": 3,
+      "subject": "professional_law",
+      "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. It also imposes an excise tax of $100 per year on every itinerant commercial figure drawer for the privilege of using the streets and sidewalks. A credit is allowed against this latter tax for any excise tax paid to the city by the drawer or his employer in respect to the maintenance of an artist's studio in the city. A gallery, located in a neighboring state, has been sending two itinerant artists into the city. Their practice is to draw a picture of a pedestrian, ask him to order a finished painting, and collect a payment of $2. 00. The drawing is sent to a studio, which frames it and mails the framed painting to the customer. The neighboring state does not impose a tax on artists' studios. The gallery challenges the constitutionality of the $100 per year excise tax that is imposed upon its itinerant artists in the city. The court will most likely declare this tax",
+      "choices": [
+        "constitutional, as a valid ad valorem tax on interstate commerce.",
+        "constitutional, since the tax was levied not on the commercial art business as a whole but on the local activity of drawing pictures.",
+        "unconstitutional, since a state or municipality may not impose a license tax on orders for goods or services to be perfonned in another state.",
+        "unconstitutional, as a discriminatory privilege tax."
+      ],
+      "answer": "B"
+    },
+    {
+      "index": 4,
+      "subject": "high_school_microeconomics",
+      "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+      "choices": [
+        "all requirements for price discrimination",
+        "required in order for a firm to earn short-run profits",
+        "all sources of elastic demand",
+        "all barriers to entry"
+      ],
+      "answer": "D"
+    },
+    {
+      "index": 5,
+      "subject": "high_school_macroeconomics",
+      "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and financial assets between nations?",
+      "choices": [
+        "The capital account",
+        "The official reserves account",
+        "The current account",
+        "The trade deficit account"
+      ],
+      "answer": "A"
+    },
+    {
+      "index": 6,
+      "subject": "high_school_government_and_politics",
+      "question": "According to The Federalist Papers, federalism has which of the following effects on political factions?",
+      "choices": [
+        "It provides a structured environment in which factions may flourish.",
+        "It limits the dangers of factionalism by diluting political power.",
+        "It allows factions to dominate on the national level while limiting their influence on state governments.",
+        "It eliminates any opportunity for factions to form."
+      ],
+      "answer": "B"
+    },
+    {
+      "index": 7,
+      "subject": "elementary_mathematics",
+      "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1 over 2 hour on science, how many subjects did she study?",
+      "choices": [
+        "4 subjects",
+        "2 subjects",
+        "6 subjects",
+        "5 subjects"
+      ],
+      "answer": "C"
+    },
+    {
+      "index": 8,
+      "subject": "professional_law",
+      "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its decision to require higher certification for instructors who wish to teach in the gifted and talented classes in elementary school. After a few days of picketing, the school board seeks a temporary injunction in the state court to restrain further picketing of the school board. The school board insists that the teachers union has violated Section 101 of the city's picketing ordinance. Section 101 reads as follows:\"Section 101. No picketing shall be permitted inside of, or on any sidewalk or street immediately adjacent or contiguous to public elementary and secondary schools without express permission of the mayor. Applications for such permission shall be filed at least three days before such picketing is intended to begin and shall state the purpose, place, and time of the proposed picketing. \"The court will most likely",
+      "choices": [
+        "grant relief, because the teachers unionfailed to follow the procedure outlined in theordinance.",
+        "grant relief, because the ordinance isconstitutional.",
+        "deny relief, because the picketing ordinancewas unconstitutional on its face.",
+        "deny relief, because the ordinance does notprovide procedural due process."
+      ],
+      "answer": "C"
+    },
+    {
+      "index": 9,
+      "subject": "conceptual_physics",
+      "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+      "choices": [
+        "conduction.",
+        "convection.",
+        "radiation.",
+        "radioactivity."
+      ],
+      "answer": "C"
+    }
+  ],
+  "best_score": 0.5997451083289602,
+  "best_prompt": "Answer the question correctly by choosing A, B, C, or D.",
+  "waves_summary": [
+    {
+      "wave": 0,
+      "best_score": 0.5910165484633569,
+      "best_prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "num_evaluated": 10,
+      "all_scores": [
+        0.5099067599067599,
+        0.14684287812041116,
+        0.14490653528474134,
+        0.14545454545454545,
+        0.28506271379703535,
+        0.36600541688016985,
+        0.5910165484633569,
+        0.5189028910303929,
+        0.5811419439198025,
+        0.5164908138419538
+      ]
+    },
+    {
+      "wave": 1,
+      "best_score": 0.5933397611807462,
+      "best_prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "num_evaluated": 10,
+      "all_scores": [
+        0.5933397611807462,
+        0.5894922997568345,
+        0.5209496167299248,
+        0.4317478592501979,
+        0.580130529369108,
+        0.5909728891187117,
+        0.5059631369714492,
+        0.5163765122455002,
+        0.5110608162371322,
+        0.43100351986207885
+      ]
+    },
+    {
+      "wave": 2,
+      "best_score": 0.5961696102541173,
+      "best_prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "num_evaluated": 10,
+      "all_scores": [
+        0.5132717407244464,
+        0.5961696102541173,
+        0.5103156666909674,
+        0.5208720886970757,
+        0.5925048141016146,
+        0.5836008170411439,
+        0.5257228689447991,
+        0.4335886688827865,
+        0.5080931988096102,
+        0.5173688100517368
+      ]
+    },
+    {
+      "wave": 3,
+      "best_score": 0.5997451083289602,
+      "best_prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "num_evaluated": 10,
+      "all_scores": [
+        0.5997451083289602,
+        0.44036697247706424,
+        0.5942653394740752,
+        0.504068553323252,
+        0.5922854816021322,
+        0.5930758395729854,
+        0.5877167205406993,
+        0.3589375448671931,
+        0.5894922997568345,
+        0.5110235070813257
+      ]
+    }
+  ],
+  "all_evaluations": [
+    {
+      "wave": 0,
+      "index": 0,
+      "prompt": "",
+      "score": 0.5099067599067599,
+      "accuracy": 0.7,
+      "total_tokens": 13728,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1433
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1278
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1356
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1235
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1433
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1371
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1273
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1184
+        }
+      ]
+    },
+    {
+      "wave": 0,
+      "index": 1,
+      "prompt": "You are an AI assistant tasked with answering multiple-choice questions from the MMLU benchmark. Your goal is to achieve the highest possible accuracy. You must answer each question by selecting the correct letter among A, B, C, or D. To maximize performance, adopt the following systematic reasoning framework. Begin each question by mentally restating it in your own words to confirm your understanding. Identify key terms, context, and the specific knowledge domain involved. Then activate relevant facts and concepts from your training. Proceed to evaluate each option independently. For each option, ask: Is this statement entirely correct? Is it consistent with established knowledge? Does it directly address the question? Compare options side by side, eliminating any that are clearly false or irrelevant. If you remain uncertain, consider subtle distinctions, such as qualifiers like \"sometimes\" versus \"always,\" and check for common misconceptions. Select the most accurate and precise answer. Before finalizing, review your reasoning: Does the chosen option fully satisfy the conditions of the question? Are there any hidden assumptions or edge cases that could invalidate it? Finally, output your answer in the format \"Answer: X\" where X is the letter. Do not add any extra text. Accuracy is critical, so take your time. Remember that these questions span a wide range of subjects, so apply rigorous reasoning appropriate to each field. To help further, follow these additional guidelines: 1. Always read the question twice before considering the options. 2. If a question involves a definition, recall the precise meaning before evaluating. 3. Eliminate options that contain extreme words (e.g., \"always,\" \"never\") unless the context justifies them. 4. When multiple options seem plausible, look for the one that is most specific and directly answers the question. 5. Beware of distractors that use familiar but incorrect phrases. 6. If the question includes negative phrasing (e.g., \"NOT true\"), pay extra attention. 7. Use your understanding of common logical fallacies to spot flawed reasoning in options. 8. Reflect on whether the question expects knowledge of a fact or an inference; adjust strategy accordingly. 9. For numerical or quantitative questions, perform mental calculations carefully. 10. Trust your training but verify with step-by-step analysis. 11. Do not overthink simple questions; straightforward answers are often correct. 12. For complex questions, break them into smaller sub-questions mentally. 13. Consider the source and style of the question; MMLU may include academic terminology. 14. If you encounter ambiguity, prioritize the most widely accepted answer. 15. Use dimensional analysis for science questions. 16. For history or dates, recall the temporal ordering of events. 17. For ethics or law, apply fundamental principles. 18. For mathematics, re-check calculations from a different approach. 19. For literature, consider themes and author intent. 20. For all questions, maintain a skeptical attitude toward easy answers. 21. After selecting your answer, quickly simulate a counterargument to test its robustness. 22. Ensure your final answer is precisely one of the four letters. 23. Do not provide explanations in your output, only the answer letter preceded by 'Answer:'. 24. This prefix is part of your instruction, so you must comply exactly. 25. Approach each question as if it is your only chance to demonstrate competence. 26. Use the full extent of your knowledge and reasoning abilities. 27. Keep calm and methodical, avoiding anxiety that might rush your decision. 28. If you need to, mentally simulate a dialogue with a knowledgeable peer to validate your choice. 29. Remember that many questions are designed to test fine-grained understanding, so avoid simplistic associations. 30. Finally, always double-check that you have not misread the question or overlooked an option. By following this comprehensive approach, you will answer correctly and reliably. Now proceed to the question below.",
+      "score": 0.14684287812041116,
+      "accuracy": 0.2,
+      "total_tokens": 13620,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1330
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1358
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1247
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1580
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1252
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1391
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "A",
+          "correct": false,
+          "tokens": 1434
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1245
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1580
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1203
+        }
+      ]
+    },
+    {
+      "wave": 0,
+      "index": 2,
+      "prompt": "You are a genius-level scholar with encyclopedic knowledge across all academic domains. Your task is to answer multiple-choice questions from the MMLU benchmark with supreme accuracy. For each question, you must select the best answer among options A, B, C, and D. To achieve this, you will adopt the mindset of a meticulous researcher who leaves no stone unturned. Begin by thoroughly reading the question and identifying its core subject. Mentally retrieve the most relevant information from your vast memory. Then consider each option not just as a possible answer but as a statement to be critically evaluated. For each option, ask: Is this statement factually correct? Does it align with authoritative sources? Is it logically consistent with the context? Might it contain a subtle error or oversimplification? Focus on distinguishing between options that are true but not directly answering the question, and those that are both true and responsive. Use elimination techniques: discard options that are contradictory, out of scope, or based on common myths. When you are down to two plausible options, examine the nuance: Which one is more precise, comprehensive, or specifically addresses the question's wording? Also consider whether the question expects a real-world fact, a technical definition, or an example-based answer. Adapt your reasoning framework accordingly. Before finalizing, take a moment to review your entire reasoning path. Check for potential biases like anchoring (fixating on one option early) or confirmation bias (favoring options that align with initial expectations). If you find any flaw, reconsider from scratch. Finally, output only your answer as \"Answer: X\" where X is the chosen letter. Do not include any additional commentary. To further sharpen your approach, follow these specific strategies: 1. Approach each question as if you are explaining the answer to a student; clarity helps accuracy. 2. For STEM subjects, use first principles and avoid memorized shortcuts unless verified. 3. For humanities, consider multiple interpretations and choose the most academically supported. 4. For social sciences, be aware of major theories and empirical findings. 5. When a question includes a date or period, place it in historical context. 6. For legal questions, distinguish between law as written and as applied. 7. For medical questions, adhere to current evidence-based guidelines. 8. For economics, consider supply and demand, incentives, and market structures. 9. For philosophy, identify the core argument and potential counterarguments. 10. For geography, recall locations, climates, and cultural aspects. 11. For computer science, use algorithms and data structures reasoning. 12. For engineering, apply fundamental principles and safety considerations. 13. For biology, remember taxonomic relationships and cellular processes. 14. For chemistry, balance equations and understand reaction types. 15. For physics, consider fundamental laws and conservation principles. 16. For mathematics, verify with alternative methods or mental computation. 17. For literature, recall plot points, themes, and author techniques. 18. For art history, recognize styles, periods, and influences. 19. For music, note composition techniques and historical context. 20. For psychology, understand key experiments and theories. 21. For political science, consider institutions, ideologies, and comparative analysis. 22. After selecting your answer, quickly test if any option is self-evidently wrong based on a quick plausibility check. 23. If you are confident, still perform a sanity check. 24. Keep your final answer concise and accurate. 25. Do not let previous questions influence your judgment on the current one. 26. Remember that some questions are tricky by design; eed questions are not necessarily harder. 27. Leverage your ability to simulate reasoning chains to verify conclusions. 28. When uncertain, choose the option that is most consistent with established knowledge. 29. Use the process of elimination even when you are sure of an answer to confirm its correctness. 30. Maintain a calm, methodical pace; accuracy matters more than speed. With this expert mindset, you will excel.",
+      "score": 0.14490653528474134,
+      "accuracy": 0.2,
+      "total_tokens": 13802,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1479
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1397
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1359
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1574
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1273
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1336
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "A",
+          "correct": false,
+          "tokens": 1375
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1258
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1574
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1177
+        }
+      ]
+    },
+    {
+      "wave": 0,
+      "index": 3,
+      "prompt": "You are a logical reasoning engine specifically optimized for multiple-choice question answering. Your function is to process each MMLU question and provide a single correct letter answer (A, B, C, or D). You operate by applying strict logical deduction, causal reasoning, and probabilistic inference where appropriate. For every question, you must construct a formal argument leading to a conclusion. Begin by parsing the question into premises and a conclusion to be drawn. Identify any implicit assumptions that may be necessary for reasoning. Then for each option, evaluate deductively: if the option were true, would it contradict any known facts or the question's premises? Use entailment to determine which options are necessarily false. Among remaining options, apply abduction to find the hypothesis that best explains the information given. When multiple options are consistent, use cost-benefit analysis: Which option is most specific, least redundant, and most directly addresses the prompt? Additionally, engage in counterfactual reasoning: imagine the world if each option were correct, and check for inconsistencies with common sense or domain knowledge. Use mental models of typical exam questions to anticipate common pitfalls such as negative phrasing, double negatives, or tricky qualifiers. Consider the possibility that the question may require external world knowledge; in that case, activate your knowledge base through associative retrieval. If you have only probabilistic confidence, weigh options by likelihood and pick the one with highest posterior probability given the question. After selecting an answer, perform a meta-reasoning check: Does my conclusion follow necessarily? Could there be a valid objection? If any doubt remains, iterate your reasoning with a different perspective. Finally, output exactly \"Answer: X\" with the letter. To support this process, adhere to these logical maxims: 1. Do not make assumptions beyond those necessary to answer. 2. Avoid false dichotomies; consider all options carefully. 3. Be wary of circular reasoning: the answer should not assume itself. 4. Use Occam's razor carefully; the simplest explanation is not always correct. 5. Distinguish between necessary and sufficient conditions for each option. 6. Check for semantic equivalence: options that restate the premise are likely wrong. 7. Use modus tollens: if an option leads to a false consequence, it is false. 8. For questions about definitions, options must capture the essential characteristics. 9. For questions about causation, consider directionality and confounding factors. 10. For classification questions, ensure the option is both necessary and sufficient. 11. For comparison questions, note the basis of comparison (e.g., more than, less than). 12. For sequence questions, respect temporal or causal order. 13. In quantitative reasoning, check units and scale. 14. In logical puzzles, systematically test each possibility. 15. Avoid the conjunction fallacy: specific scenarios are not always more likely. 16. Use base rates if statistical information is implicit. 17. Consider selection bias: the question may be from a particular subset. 18. Ensure your reasoning is transparent to yourself even though you only output a letter. 19. When in doubt, fall back to principled reasoning rather than gut feeling. 20. Use the entire set of answers to calibrate your confidence: if only one option is plausible, it is likely correct. 21. Pay attention to the question phrasing: “Which of the following is NOT...” requires careful negation handling. 22. Use inductive reasoning for pattern-based questions, but verify with deductive constraints. 23. For argumentation questions, identify premises, conclusions, and logical fallacies. 24. For ethics, apply normative ethical frameworks consistently. 25. For policy questions, consider intended outcomes and trade-offs. 26. For definitional questions, seek necessary and sufficient conditions. 27. For cause-effect, consider alternative explanations. 28. For analogies, ensure the relationship is consistent across all terms. 29. For fill-in-the-blank, test each option grammatically and contextually. 30. Finally, always check your reasoning for any subtle leaps in logic. By following this rigorous logical approach, you will maximize answer accuracy.",
+      "score": 0.14545454545454545,
+      "accuracy": 0.2,
+      "total_tokens": 13750,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1511
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1267
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1388
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1570
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1252
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1401
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "A",
+          "correct": false,
+          "tokens": 1299
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1281
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1571
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1210
+        }
+      ]
+    },
+    {
+      "wave": 0,
+      "index": 4,
+      "prompt": "You are a careful and thorough thinker who specializes in avoiding common mistakes on multiple-choice tests. Your task is to answer MMLU questions with high accuracy by following a cautious, deliberate process. For each question, you will take a deep breath and proceed with patience. First, read the question steadily, noticing any tricky words like \"never,\" \"always,\" \"except,\" \"not,\" or \"false.\" Rephrase the question in your mind to ensure you are answering what is actually asked. Then consider each option separately, but do not rush to a conclusion. For each option, ask: Could this be a distractor that appears plausible but is actually incorrect? What subtle error might be hidden? Is there a common misconception that this option exploits? Use your training to recall typical pitfalls in each subject area. When you have evaluated all options, eliminate those you know are false. If one remains, that is likely your answer. If multiple remain, look for the one that is most precisely worded and directly matches the question's requirement. Do not select an option just because it sounds knowledgeable; check its substance. If you are uncertain, allow yourself to consider a mental \"fallback\" strategy: imagine explaining your reasoning to someone else; if you cannot justify it clearly, reconsider. Do not be swayed by the order of options; D is not more likely to be correct than A. Avoid overconfidence: even if you think you know the answer immediately, still examine the other options to ensure you haven't missed a nuance. After selecting an answer, double-check by plugging it back into the question: does it make sense in context? Does it resolve the question without contradiction? Finally, output your answer as \"Answer: X\". To enhance your carefulness, follow these additional precautions: 1. Never read an option and immediately assume it is correct; always check others. 2. Watch out for absolutes: they are often wrong unless the domain truly supports them. 3. If two options are synonyms, both may be wrong or one is more precise. 4. For questions with \"all of the above\" or \"none of the above,\" treat them as distinct possibilities. 5. If \"all of the above\" is correct, each individual option must be true. 6. If \"none of the above\" is correct, all options must be false. 7. Be cautious with numbers: a small miscalculation can lead to a wrong answer. 8. For historical dates, remember that context matters more than exact year. 9. For scientific questions, note the difference between correlation and causation. 10. For definitions, the most precise definition is often correct. 11. For questions with \"in terms of...\" the answer must reflect that perspective. 12. If a question includes a specific example, the answer should be consistent with that example. 13. Do not generalize from personal experience; rely on established knowledge. 14. When you catch yourself guessing, stop and reason more carefully. 15. Use the process of elimination explicitly, marking options as true or false. 16. Beware of options that are true but irrelevant: they do not answer the question. 17. Consider the possibility that the question expects a specific technical term. 18. For questions about processes, ensure the answer describes the correct sequence. 19. For comparative questions, check whether the comparison is direct or implied. 20. In law, pay attention to the precise legal standard. 21. In medicine, follow the most current accepted practice. 22. In engineering, safety considerations often override other factors. 23. In economics, marginal analysis is key. 24. In philosophy, distinguish between normative and descriptive statements. 25. In history, avoid presentism: evaluate in the context of the time. 26. In literature, consider the intended audience and authorial purpose. 27. In psychology, be aware of common biases and heuristics. 28. In political science, understand the differences between systems. 29. In biology, evolutionary explanations are often central. 30. In physics, check for conservation laws and symmetry. Following this cautious approach will minimize errors.",
+      "score": 0.28506271379703535,
+      "accuracy": 0.4,
+      "total_tokens": 14032,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1406
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1283
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1326
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1577
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1371
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": null,
+          "correct": false,
+          "tokens": 1580
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "A",
+          "correct": false,
+          "tokens": 1415
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1301
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1578
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1195
+        }
+      ]
+    },
+    {
+      "wave": 0,
+      "index": 5,
+      "prompt": "You are a test-taking specialist who has mastered the art of answering multiple-choice questions accurately. Your objective is to perform exceptionally on the MMLU benchmark by employing a hybrid strategy of quick pattern recognition followed by deliberate verification. For each question, use this two-pass method. First, read the question and quickly activate your knowledge. As you scan the options, note any immediate recognition: which option seems intuitively correct based on your training? Mark it mentally but do not commit. Then proceed to a second pass: systematically evaluate each option with critical analysis. For each, determine its truth value relative to the question. Look for inconsistencies, exaggerations, or mismatches in context. Use your understanding of common test-writer techniques: they often include a clearly wrong option (laughable), a plausible but incorrect option (distractor), a close but slightly off option (near miss), and the correct answer (precise). Identify which role each option plays. Also pay attention to the grammatical fit: the correct answer often fits seamlessly into the question stem when phrased as a statement. For questions that require a specific term or fact, rely on your memory but cross-check by reasoning from first principles if possible. For questions that require reasoning, break down the problem into steps. After selecting an answer, try to construct a counterargument. If you can find a strong objection, reconsider. Use these steps to refine your selection. Finally, output your answer as \"Answer: X\". To optimize your performance, use these quick tips and deep strategies: 1. The first answer that comes to mind is often correct for straightforward questions, but always check. 2. For challenging",
+      "score": 0.36600541688016985,
+      "accuracy": 0.5,
+      "total_tokens": 13661,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1367
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1367
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1368
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1578
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1271
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1225
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1436
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "A",
+          "correct": false,
+          "tokens": 1242
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1226
+        }
+      ]
+    },
+    {
+      "wave": 0,
+      "index": 6,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5910165484633569,
+      "accuracy": 0.8,
+      "total_tokens": 13536,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1280
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1221
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1415
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1335
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1420
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1265
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1240
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1195
+        }
+      ]
+    },
+    {
+      "wave": 0,
+      "index": 7,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5189028910303929,
+      "accuracy": 0.7,
+      "total_tokens": 13490,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1347
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1339
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1324
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1276
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1281
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1343
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1244
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1171
+        }
+      ]
+    },
+    {
+      "wave": 0,
+      "index": 8,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5811419439198025,
+      "accuracy": 0.8,
+      "total_tokens": 13766,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1424
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1314
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1370
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1285
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1475
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1309
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1232
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1192
+        }
+      ]
+    },
+    {
+      "wave": 0,
+      "index": 9,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5164908138419538,
+      "accuracy": 0.7,
+      "total_tokens": 13553,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1355
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1323
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1321
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1281
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1342
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1334
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1243
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1189
+        }
+      ]
+    },
+    {
+      "wave": 1,
+      "index": 0,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5933397611807462,
+      "accuracy": 0.8,
+      "total_tokens": 13483,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1369
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1281
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1308
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1255
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1315
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1357
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1244
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1189
+        }
+      ]
+    },
+    {
+      "wave": 1,
+      "index": 1,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5894922997568345,
+      "accuracy": 0.8,
+      "total_tokens": 13571,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1432
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1394
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1306
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1218
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1314
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1342
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1230
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1170
+        }
+      ]
+    },
+    {
+      "wave": 1,
+      "index": 2,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5209496167299248,
+      "accuracy": 0.7,
+      "total_tokens": 13437,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1391
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1302
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1316
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1260
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1262
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1335
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1221
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1185
+        }
+      ]
+    },
+    {
+      "wave": 1,
+      "index": 3,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.4317478592501979,
+      "accuracy": 0.6,
+      "total_tokens": 13897,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1313
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1401
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1463
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1274
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1290
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1220
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1187
+        }
+      ]
+    },
+    {
+      "wave": 1,
+      "index": 4,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.580130529369108,
+      "accuracy": 0.8,
+      "total_tokens": 13790,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1355
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1360
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1304
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1349
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1457
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1375
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1218
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1207
+        }
+      ]
+    },
+    {
+      "wave": 1,
+      "index": 5,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5909728891187117,
+      "accuracy": 0.8,
+      "total_tokens": 13537,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1317
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1274
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1320
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1374
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1352
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1360
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1214
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1161
+        }
+      ]
+    },
+    {
+      "wave": 1,
+      "index": 6,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5059631369714492,
+      "accuracy": 0.7,
+      "total_tokens": 13835,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1481
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1373
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1341
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1308
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1399
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1387
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1196
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1185
+        }
+      ]
+    },
+    {
+      "wave": 1,
+      "index": 7,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5163765122455002,
+      "accuracy": 0.7,
+      "total_tokens": 13556,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1272
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1413
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1340
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1312
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1289
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1351
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1245
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1169
+        }
+      ]
+    },
+    {
+      "wave": 1,
+      "index": 8,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5110608162371322,
+      "accuracy": 0.7,
+      "total_tokens": 13697,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1345
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1308
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1288
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1270
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1456
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1440
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1239
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1186
+        }
+      ]
+    },
+    {
+      "wave": 1,
+      "index": 9,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.43100351986207885,
+      "accuracy": 0.6,
+      "total_tokens": 13921,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1438
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1411
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1333
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1285
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1317
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1202
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1186
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "index": 0,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5132717407244464,
+      "accuracy": 0.7,
+      "total_tokens": 13638,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1316
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1361
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1297
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1268
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1528
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1290
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1239
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1174
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "index": 1,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5961696102541173,
+      "accuracy": 0.8,
+      "total_tokens": 13419,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1370
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1313
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1266
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1300
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1266
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1346
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1234
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1159
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "index": 2,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5103156666909674,
+      "accuracy": 0.7,
+      "total_tokens": 13717,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1324
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1296
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1314
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1276
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1522
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1302
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1293
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1225
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "index": 3,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5208720886970757,
+      "accuracy": 0.7,
+      "total_tokens": 13439,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1357
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1296
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1252
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1246
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1320
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1376
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1266
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1161
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "index": 4,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5925048141016146,
+      "accuracy": 0.8,
+      "total_tokens": 13502,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1386
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1279
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1427
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1283
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1232
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1337
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1209
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1184
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "index": 5,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5836008170411439,
+      "accuracy": 0.8,
+      "total_tokens": 13708,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1346
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1374
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1385
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1342
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1278
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1389
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1244
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1185
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "index": 6,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5257228689447991,
+      "accuracy": 0.7,
+      "total_tokens": 13315,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1341
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1298
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1264
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1309
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1236
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1293
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1245
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1164
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "index": 7,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.4335886688827865,
+      "accuracy": 0.6,
+      "total_tokens": 13838,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "C",
+          "correct": false,
+          "tokens": 1515
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1462
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1363
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1244
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1253
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1382
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1257
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1197
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "index": 8,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5080931988096102,
+      "accuracy": 0.7,
+      "total_tokens": 13777,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1338
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1392
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1288
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1257
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1328
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1238
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1187
+        }
+      ]
+    },
+    {
+      "wave": 2,
+      "index": 9,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5173688100517368,
+      "accuracy": 0.7,
+      "total_tokens": 13530,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1386
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1348
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1316
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1326
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1282
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1306
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1223
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1178
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "index": 0,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5997451083289602,
+      "accuracy": 0.8,
+      "total_tokens": 13339,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1343
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1191
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1301
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1329
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1236
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1389
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1216
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1169
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "index": 1,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.44036697247706424,
+      "accuracy": 0.6,
+      "total_tokens": 13625,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1336
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1313
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1237
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1246
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1359
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1213
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1172
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "index": 2,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5942653394740752,
+      "accuracy": 0.8,
+      "total_tokens": 13462,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1497
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1248
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1338
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1227
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1246
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1316
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1201
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1224
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "index": 3,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.504068553323252,
+      "accuracy": 0.7,
+      "total_tokens": 13887,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1354
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1512
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1375
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1297
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1473
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1314
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1218
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1179
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "index": 4,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5922854816021322,
+      "accuracy": 0.8,
+      "total_tokens": 13507,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1334
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1279
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1350
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1301
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1300
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1352
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1219
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1207
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "index": 5,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5930758395729854,
+      "accuracy": 0.8,
+      "total_tokens": 13489,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1414
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1220
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1325
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1288
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1384
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1278
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1245
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1170
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "index": 6,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5877167205406993,
+      "accuracy": 0.8,
+      "total_tokens": 13612,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1361
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1342
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1377
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1269
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1335
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1343
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1246
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1174
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "index": 7,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.3589375448671931,
+      "accuracy": 0.5,
+      "total_tokens": 13930,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "C",
+          "correct": false,
+          "tokens": 1374
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "C",
+          "correct": false,
+          "tokens": 1309
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1396
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1250
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1424
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1247
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1181
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "index": 8,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5894922997568345,
+      "accuracy": 0.8,
+      "total_tokens": 13571,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1360
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1283
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1328
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1325
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1283
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1363
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1285
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1179
+        }
+      ]
+    },
+    {
+      "wave": 3,
+      "index": 9,
+      "prompt": "Answer the question correctly by choosing A, B, C, or D.",
+      "score": 0.5110235070813257,
+      "accuracy": 0.7,
+      "total_tokens": 13698,
+      "per_question": [
+        {
+          "subject": "professional_accounting",
+          "question": "Mast Co. converted from the FIFO method for inventory valuation to the LIFO method for financial sta",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1363
+        },
+        {
+          "subject": "econometrics",
+          "question": "What are the dimensions of $\\hat{u}^t \\hat{u}?",
+          "expected": "D",
+          "got": "A",
+          "correct": false,
+          "tokens": 1367
+        },
+        {
+          "subject": "business_ethics",
+          "question": "_______ theory can be described as a code of conduct to which all rational beings should adhere. Thi",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1391
+        },
+        {
+          "subject": "professional_law",
+          "question": "A city imposes a municipal excise tax of $200 per year on commercial artists' studios in that city. ",
+          "expected": "B",
+          "got": null,
+          "correct": false,
+          "tokens": 1581
+        },
+        {
+          "subject": "high_school_microeconomics",
+          "question": "Patents, control of resources, economies of scale, and exclusive licenses are",
+          "expected": "D",
+          "got": "D",
+          "correct": true,
+          "tokens": 1249
+        },
+        {
+          "subject": "high_school_macroeconomics",
+          "question": "Which component of a nation's balance of payments recognizes the purchase and sale of real and finan",
+          "expected": "A",
+          "got": "A",
+          "correct": true,
+          "tokens": 1330
+        },
+        {
+          "subject": "high_school_government_and_politics",
+          "question": "According to The Federalist Papers, federalism has which of the following effects on political facti",
+          "expected": "B",
+          "got": "B",
+          "correct": true,
+          "tokens": 1387
+        },
+        {
+          "subject": "elementary_mathematics",
+          "question": "Keri spent 3 hours on her homework. She spent equal amounts of time on all subjects. If Keri spent 1",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1248
+        },
+        {
+          "subject": "professional_law",
+          "question": "A teachers union, a nongovernmental entity, seeks to picket the local city school board for its deci",
+          "expected": "C",
+          "got": null,
+          "correct": false,
+          "tokens": 1584
+        },
+        {
+          "subject": "conceptual_physics",
+          "question": "The surface of Planet Earth loses energy to outer space due mostly to",
+          "expected": "C",
+          "got": "C",
+          "correct": true,
+          "tokens": 1198
+        }
+      ]
+    }
+  ]
+}
